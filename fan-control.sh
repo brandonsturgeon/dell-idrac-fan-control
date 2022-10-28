@@ -25,7 +25,7 @@ fi
 DEC_HEX=$(printf '%x\n' $SET_SPEED)
 
 TEMP=$(ipmitool -I lanplus -H $IDRAC_IP -U $IDRAC_UNAME -P $IDRAC_PASSWD sdr type temperature)
-log "$TEMP"
+echo "$TEMP" >> $LOG_FILE
 TEMP=$(echo $TEMP | grep -m 1 "$SENSOR_NAME")
 TEMP=$(echo $TEMP | awk '{ print $21 }')
 
