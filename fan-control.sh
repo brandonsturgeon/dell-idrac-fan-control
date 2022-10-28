@@ -11,7 +11,7 @@ log () {
     echo "[$DATE] $1" >> $LOG_FILE
 }
 
-log ""
+echo "" >> $LOG_FILE
 echo $(date) >> $LOG_FILE
 
 if [ ! -f $SCRIPT_DIR/idrac-creds.sh ]; then
